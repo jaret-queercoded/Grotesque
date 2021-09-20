@@ -1,0 +1,61 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://art/dialogbox.jpg" type="Texture" id=1]
+[ext_resource path="res://DialogBox.gd" type="Script" id=2]
+
+[node name="DialogBox" type="Control"]
+margin_right = 40.0
+margin_bottom = 40.0
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="."]
+margin_left = 36.7772
+margin_top = 33.5228
+margin_right = 548.777
+margin_bottom = 253.523
+rect_scale = Vector2( 0.357089, 0.394953 )
+texture = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="DialogText" type="RichTextLabel" parent="."]
+margin_left = 46.0
+margin_top = 45.0
+margin_right = 210.0
+margin_bottom = 92.0
+custom_colors/default_color = Color( 1, 1, 0.866667, 1 )
+bbcode_enabled = true
+bbcode_text = "[center]This is a test[/center]"
+text = "This is a test"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="FinishedIndicator" type="RichTextLabel" parent="."]
+margin_left = 43.0
+margin_top = 97.0
+margin_right = 215.0
+margin_bottom = 114.0
+custom_colors/default_color = Color( 1, 1, 0.866667, 1 )
+bbcode_enabled = true
+bbcode_text = "[center]Press E to continue"
+text = "Press E to continue"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Tween" type="Tween" parent="."]
+
+[node name="Control" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = 255.0
+margin_bottom = 72.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="tween_completed" from="Tween" to="." method="_on_Tween_tween_completed"]

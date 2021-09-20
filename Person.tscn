@@ -1,8 +1,7 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://art/person.glb" type="PackedScene" id=1]
 [ext_resource path="res://Person.gd" type="Script" id=2]
-[ext_resource path="res://LookAtArea.gd" type="Script" id=3]
 
 [sub_resource type="CapsuleShape" id=1]
 
@@ -21,10 +20,9 @@ transform = Transform( 1.97676, 0, 0, 0, -4.55082e-07, -2.79327, 0, 1.31364, -2.
 shape = SubResource( 1 )
 
 [node name="LookAtArea" type="Area" parent="."]
-script = ExtResource( 3 )
 
 [node name="CollisionShape" type="CollisionShape" parent="LookAtArea"]
 transform = Transform( 7, 0, 0, 0, 4.06284, 0, 0, 0, 7, 0, 3.81141, 0 )
 shape = SubResource( 2 )
-[connection signal="body_entered" from="LookAtArea" to="LookAtArea" method="_on_LookAtArea_body_entered"]
-[connection signal="body_exited" from="LookAtArea" to="LookAtArea" method="_on_LookAtArea_body_exited"]
+[connection signal="body_entered" from="LookAtArea" to="." method="_on_LookAtArea_body_entered"]
+[connection signal="body_exited" from="LookAtArea" to="." method="_on_LookAtArea_body_exited"]

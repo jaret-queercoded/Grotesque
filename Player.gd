@@ -9,21 +9,25 @@ const MAX_FALL_SPEED = 30
 var y_velocity = 0
 var grounded = false
 
+var interacting = false
+
 func _physics_process(delta):
 	var backwards = false
 	var move_dir = 0
 	var turn_dir = 0
-	if Input.is_action_pressed("turn_left"):
-		turn_dir += 1
-	if Input.is_action_pressed("turn_right"):
-		turn_dir -= 1
 	
-	if Input.is_action_pressed("move_back"):
-		move_dir += 1
-		backwards = true
-	if Input.is_action_pressed("move_forward"):
-		move_dir -= 1
-		backwards = false
+	if !interacting:
+		if Input.is_action_pressed("turn_left"):
+			turn_dir += 1
+		if Input.is_action_pressed("turn_right"):
+			turn_dir -= 1
+		
+		if Input.is_action_pressed("move_back"):
+			move_dir += 1
+			backwards = true
+		if Input.is_action_pressed("move_forward"):
+			move_dir -= 1
+			backwards = false
 	
 	rotation_degrees.y += turn_dir * TURN_SPEED * delta
 	
