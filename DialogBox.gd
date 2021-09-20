@@ -31,6 +31,7 @@ func _physics_process(delta):
 		load_dialog()
 
 func load_dialog():
+	$VoiceLine.playing = true
 	if dialog_index < dialog.size():
 		finished = false
 		$DialogText.bbcode_text = "[center]" + dialog[dialog_index] + "[/center]"
@@ -49,4 +50,5 @@ func load_dialog():
 	dialog_index += 1
 
 func _on_Tween_tween_completed(object, key):
+	$VoiceLine.playing = false;
 	finished = true
