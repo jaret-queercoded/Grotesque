@@ -11,6 +11,8 @@ export var can_interact = true
 export var dialog_json_path = "res://dialog/test.json"
 export var interaction_sound_path = "res://audio/test.ogg"
 
+export var interaction_text = "Press E to talk"
+
 export var pitch = 1.0
 
 const DIALOG = preload("res://DialogBox.tscn")

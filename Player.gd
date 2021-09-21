@@ -53,6 +53,7 @@ func _physics_process(delta):
 	if $InteractRay.is_colliding():
 		var collision = $InteractRay.get_collider()
 		if collision.can_interact and not interacting:
+			interact_label.bbcode_text = "[center]" + collision.interaction_text
 			interact_label.visible = true
 			if Input.is_action_just_pressed("interact"):
 				interacting = true
