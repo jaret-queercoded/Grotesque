@@ -10,6 +10,7 @@ radius = 1.37268
 height = 2.08554
 
 [node name="Person" type="KinematicBody"]
+collision_mask = 2
 script = ExtResource( 2 )
 
 [node name="person" parent="." instance=ExtResource( 1 )]
@@ -24,5 +25,6 @@ shape = SubResource( 1 )
 [node name="CollisionShape" type="CollisionShape" parent="LookAtArea"]
 transform = Transform( 7, 0, 0, 0, 4.06284, 0, 0, 0, 7, 0, 3.81141, 0 )
 shape = SubResource( 2 )
+
 [connection signal="body_entered" from="LookAtArea" to="." method="_on_LookAtArea_body_entered"]
 [connection signal="body_exited" from="LookAtArea" to="." method="_on_LookAtArea_body_exited"]
