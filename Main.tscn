@@ -29,11 +29,21 @@ shadow_enabled = true
 transform = Transform( 2.5, 0, 0, 0, 2.5, 0, 0, 0, 2.5, 0, 0, 0 )
 
 [node name="Person" parent="." instance=ExtResource( 2 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 9.61679, -0.337147, -8.10388 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 17.4251, -0.337147, -8.10388 )
 dialog_json_path = "res://dialog/jonathan.json"
+interaction_sound_path = "res://audio/voice.ogg"
+pitch = 1.78
 
 [node name="Person2" parent="." instance=ExtResource( 2 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3.64987, -0.337147, -8.10388 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -11.2032, -0.337147, -8.10388 )
+interaction_sound_path = "res://audio/voice.ogg"
+pitch = 3.0
+
+[node name="Person3" parent="." instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -11.2032, -0.337147, 12.1348 )
+dialog_json_path = "res://dialog/chris.json"
+interaction_sound_path = "res://audio/voice.ogg"
+pitch = 3.0
 
 [node name="InteractLabel" type="Label" parent="."]
 visible = false

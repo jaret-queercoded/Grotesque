@@ -1,8 +1,7 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://art/dialogbox.jpg" type="Texture" id=1]
 [ext_resource path="res://DialogBox.gd" type="Script" id=2]
-[ext_resource path="res://audio/voice.ogg" type="AudioStream" id=3]
 
 [node name="DialogBox" type="Control"]
 margin_right = 40.0
@@ -60,7 +59,6 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="VoiceLine" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 3 )
+[node name="InteractionSound" type="AudioStreamPlayer" parent="."]
 pitch_scale = 2.5
 [connection signal="tween_completed" from="Tween" to="." method="_on_Tween_tween_completed"]

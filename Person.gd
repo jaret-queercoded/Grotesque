@@ -12,6 +12,9 @@ var interact_label
 var can_interact = false
 
 export var dialog_json_path = "res://dialog/test.json"
+export var interaction_sound_path = "res://audio/test.ogg"
+
+export var pitch = 1.0
 
 const DIALOG = preload("res://DialogBox.tscn")
 
@@ -28,6 +31,8 @@ func _input(event):
 		interact_label.visible = false
 		var dialog = DIALOG.instance()
 		dialog.dialog_path = dialog_json_path
+		dialog.interaction_sound_path = interaction_sound_path
+		dialog.pitch = pitch
 		get_parent().add_child(dialog)
 		player.interacting = true
 
