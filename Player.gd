@@ -11,6 +11,11 @@ var grounded = false
 
 var interacting = false
 
+var inventory = {}
+
+func _ready():
+	GameData.item_data
+
 func _physics_process(delta):
 	var backwards = false
 	var move_dir = 0
@@ -44,3 +49,6 @@ func _physics_process(delta):
 		y_velocity = -0.1
 	if y_velocity < -MAX_FALL_SPEED:
 		y_velocity = -MAX_FALL_SPEED
+
+func add_item(key, item):
+	inventory[key] = item

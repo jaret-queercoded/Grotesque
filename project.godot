@@ -19,6 +19,10 @@ config/name="Grotesque"
 run/main_scene="res://Main.tscn"
 config/icon="res://icon.png"
 
+[autoload]
+
+GameData="*res://Singletons/GameData.gd"
+
 [display]
 
 window/size/width=256
