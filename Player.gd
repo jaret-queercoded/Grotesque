@@ -11,10 +11,12 @@ var grounded = false
 
 var interacting = false
 
+var interact_label
+
 var inventory = {}
 
 func _ready():
-	GameData.item_data
+	interact_label = get_tree().get_root().get_node("Main").get_node("InteractLabel")
 
 func _physics_process(delta):
 	var backwards = false
@@ -49,6 +51,18 @@ func _physics_process(delta):
 		y_velocity = -0.1
 	if y_velocity < -MAX_FALL_SPEED:
 		y_velocity = -MAX_FALL_SPEED
+	
+	if $InteractRay.is_colliding():
+		var collision = $InteractRay.get_collider()
+		if collision.can_interact and not interacting:
+			interact_label.bbcode_text = "[center]" + collision.interaction_text
+			interact_label.visible = true
+			if Input.is_action_just_pressed("interact"):
+				interacting = true
+				interact_label.visible = false
+				collision.interact()
+	else:
+		interact_label.visible = false
 
 func add_item(key, item):
 	inventory[key] = item

@@ -42,6 +42,8 @@ func _ready():
 	audio_stream_player.playing = false
 	audio_stream_player.pitch_scale = pitch
 	add_child(audio_stream_player)
+	
+	load_dialog()
 
 func _physics_process(delta):
 	$"FinishedIndicator".visible = finished
@@ -62,7 +64,7 @@ func load_dialog():
 		$Tween.start()
 	else:
 		player.interacting = false
-		#get_parent().reset_interaction()
+		get_parent().can_interact = true
 		queue_free()
 	
 	dialog_index += 1

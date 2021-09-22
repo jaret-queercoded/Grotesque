@@ -36,10 +36,11 @@ __meta__ = {
 }
 
 [node name="FinishedIndicator" type="RichTextLabel" parent="."]
-margin_left = 43.0
-margin_top = 97.0
-margin_right = 215.0
-margin_bottom = 114.0
+visible = false
+margin_left = 42.685
+margin_top = 98.7324
+margin_right = 214.685
+margin_bottom = 115.732
 custom_colors/default_color = Color( 1, 1, 0.866667, 1 )
 bbcode_enabled = true
 bbcode_text = "[center]Press E to continue"
@@ -59,6 +60,4 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="InteractionSound" type="AudioStreamPlayer" parent="."]
-pitch_scale = 2.5
 [connection signal="tween_completed" from="Tween" to="." method="_on_Tween_tween_completed"]

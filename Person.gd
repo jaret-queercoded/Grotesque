@@ -2,46 +2,27 @@ extends KinematicBody
 
 var target
 
-var speed = 1
+export var speed = 1
 
-var original_direction_target
-
-var player
-var interact_label
-
-var can_interact = false
+export var can_interact = true
 
 export var dialog_json_path = "res://dialog/test.json"
 export var interaction_sound_path = "res://audio/test.ogg"
+
+export var interaction_text = "Press E to talk"
 
 export var pitch = 1.0
 
 const DIALOG = preload("res://DialogBox.tscn")
 
-func _ready():
-	original_direction_target = transform.origin
-	original_direction_target.z -= .01
-	
-	player = get_tree().get_root().get_node("Main").get_node("Player")
-	interact_label = get_tree().get_root().get_node("Main").get_node("InteractLabel")
-
-func _input(event):
-	if Input.is_action_just_pressed("interact") and can_interact:
-		can_interact = false
-		interact_label.visible = false
-		var dialog = DIALOG.instance()
-		dialog.dialog_path = dialog_json_path
-		dialog.interaction_sound_path = interaction_sound_path
-		dialog.pitch = pitch
-		get_parent().add_child(dialog)
-		player.interacting = true
-
 func _physics_process(delta):
 	if target:
 		look_at_target(target.transform.origin, delta)
-	
-	else:
-		look_at_target(original_direction_target, delta)
+		# TODO do I want the person to turn and look back at what they are focusing
+		# on. Maybe I should have somefocus and maybe I should code it that if the 
+		# person is given a object to focus on they will go back to focus on that
+		# when the player leaves the look at area. Not sure but I think that I 
+		# shelve this idea for now
 
 
 func look_at_target(target_position, delta):
@@ -62,15 +43,15 @@ func look_at_target(target_position, delta):
 func _on_LookAtArea_body_entered(body):
 	if body.get_name() == "Player":
 		target = body
-		interact_label.visible = true
-		can_interact = true
 
 func _on_LookAtArea_body_exited(body):
 	if body.get_name() == "Player":
 		target = null
-		interact_label.visible = false
-		can_interact = false
 
-func reset_interaction():
-	can_interact = true
-	interact_label.visible = true
+func interact():
+	can_interact = false
+	var dialog = DIALOG.instance()
+	dialog.dialog_path = dialog_json_path
+	dialog.interaction_sound_path = interaction_sound_path
+	dialog.pitch = pitch
+	add_child(dialog)

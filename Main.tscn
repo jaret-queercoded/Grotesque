@@ -46,17 +46,15 @@ dialog_json_path = "res://dialog/chris.json"
 interaction_sound_path = "res://audio/voice.ogg"
 pitch = 3.0
 
-[node name="InteractLabel" type="Label" parent="."]
-visible = false
-margin_left = 87.2422
-margin_top = 118.358
-margin_right = 177.242
-margin_bottom = 132.358
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "Press E to talk"
+[node name="Key" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 21.3228, -0.116642, 6.64205 )
+
+[node name="InteractLabel" type="RichTextLabel" parent="."]
+margin_top = 110.151
+margin_right = 256.0
+margin_bottom = 150.151
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+bbcode_enabled = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
-
-[node name="Key" parent="." instance=ExtResource( 3 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 21.3228, -0.116642, 6.64205 )
