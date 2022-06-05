@@ -58,6 +58,3 @@ bbcode_enabled = true
 bbcode_text = "[center]Placeholder"
 text = "Placeholder"
 scroll_active = false
-__meta__ = {
-"_edit_use_anchors_": false
-}
