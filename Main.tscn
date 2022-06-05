@@ -50,11 +50,6 @@ pitch = 3.0
 [node name="Key" parent="." instance=ExtResource( 3 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 21.3228, -0.116642, 6.64205 )
 
-[node name="Chest" parent="." instance=ExtResource( 4 )]
-transform = Transform( 2.45803, 0, 0, 0, 2.02575, 0, 0, 0, 2.27075, 0, 0, 20.8236 )
-has_required_item = true
-contained_items = [ "test_item", "secret_item" ]
-
 [node name="InteractLabel" type="RichTextLabel" parent="."]
 margin_top = 110.151
 margin_right = 256.0
@@ -64,3 +59,6 @@ bbcode_enabled = true
 bbcode_text = "[center]Placeholder"
 text = "Placeholder"
 scroll_active = false
+
+[node name="Chest" parent="." instance=ExtResource( 4 )]
+transform = Transform( 2.45803, 0, 0, 0, 2.02575, 0, 0, 0, 2.27075, 0, 0, 22.0362 )
