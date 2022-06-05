@@ -36,8 +36,8 @@ func _physics_process(delta):
 			move_dir -= 1
 			backwards = false
 		if Input.is_action_just_pressed("open_inventory"):
-			for item in inventory:
-				print(item)
+			for item_key in inventory.keys():
+				print(inventory[item_key].name)
 	
 	rotation_degrees.y += turn_dir * TURN_SPEED * delta
 	
@@ -69,3 +69,9 @@ func _physics_process(delta):
 
 func add_item(key, item):
 	inventory[key] = item
+
+func remove_item(key):
+	inventory.erase(key)
+
+func has_item(key):
+	return inventory.has(key)

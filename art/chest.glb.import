@@ -2,12 +2,12 @@
 
 importer="scene"
 type="PackedScene"
-path="res://.import/person.glb-27207afc1cca1f3c48985bbb8ab55d58.scn"
+path="res://.import/chest.glb-300ef76d944403cc28565b8622ff8d79.scn"
 
 [deps]
 
-source_file="res://art/person.glb"
-dest_files=[ "res://.import/person.glb-27207afc1cca1f3c48985bbb8ab55d58.scn" ]
+source_file="res://art/chest.glb"
+dest_files=[ "res://.import/chest.glb-300ef76d944403cc28565b8622ff8d79.scn" ]
 
 [params]
 
@@ -16,12 +16,12 @@ nodes/root_name="Scene Root"
 nodes/root_scale=1.0
 nodes/custom_script=""
 nodes/storage=0
-nodes/use_legacy_names=true
+nodes/use_legacy_names=false
 materials/location=1
 materials/storage=1
 materials/keep_on_reimport=true
 meshes/octahedral_compression=true
-meshes/compress=true
+meshes/compress=4286
 meshes/ensure_tangents=true
 meshes/storage=0
 meshes/light_baking=0

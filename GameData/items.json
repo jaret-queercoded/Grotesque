@@ -1,5 +1,10 @@
 {
     "test_key" : {
+        "name": "Test Key",
         "description": "this is a test key"
+    },
+    "chest_key" : {
+        "name": "Chest Key",
+        "description": "this key opens a chest"
     }
 }
