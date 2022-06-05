@@ -13,6 +13,8 @@ var interacting = false
 
 var interact_label
 
+var inventory = {}
+
 func _ready():
 	interact_label = get_tree().get_root().get_node("Main").get_node("InteractLabel")
 
@@ -61,3 +63,6 @@ func _physics_process(delta):
 				collision.interact()
 	else:
 		interact_label.visible = false
+
+func add_item(key, item):
+	inventory[key] = item

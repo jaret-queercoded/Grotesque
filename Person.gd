@@ -2,9 +2,7 @@ extends KinematicBody
 
 var target
 
-var speed = 1
-
-var original_direction_target
+export var speed = 1
 
 export var can_interact = true
 
@@ -17,16 +15,14 @@ export var pitch = 1.0
 
 const DIALOG = preload("res://DialogBox.tscn")
 
-func _ready():
-	original_direction_target = transform.origin
-	original_direction_target.z -= .01
-
 func _physics_process(delta):
 	if target:
 		look_at_target(target.transform.origin, delta)
-	
-	else:
-		look_at_target(original_direction_target, delta)
+		# TODO do I want the person to turn and look back at what they are focusing
+		# on. Maybe I should have somefocus and maybe I should code it that if the 
+		# person is given a object to focus on they will go back to focus on that
+		# when the player leaves the look at area. Not sure but I think that I 
+		# shelve this idea for now
 
 
 func look_at_target(target_position, delta):
