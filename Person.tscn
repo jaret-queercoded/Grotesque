@@ -10,6 +10,7 @@ radius = 1.37268
 height = 2.08554
 
 [node name="Person" type="KinematicBody"]
+collision_layer = 513
 collision_mask = 2
 script = ExtResource( 2 )
 

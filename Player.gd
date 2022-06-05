@@ -35,6 +35,9 @@ func _physics_process(delta):
 		if Input.is_action_pressed("move_forward"):
 			move_dir -= 1
 			backwards = false
+		if Input.is_action_just_pressed("open_inventory"):
+			for item in inventory:
+				print(item)
 	
 	rotation_degrees.y += turn_dir * TURN_SPEED * delta
 	

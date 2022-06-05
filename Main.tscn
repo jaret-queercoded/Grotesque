@@ -55,6 +55,6 @@ margin_right = 256.0
 margin_bottom = 150.151
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 bbcode_enabled = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
+bbcode_text = "[center]Placeholder"
+text = "Placeholder"
+scroll_active = false
