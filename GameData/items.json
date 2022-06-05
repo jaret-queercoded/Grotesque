@@ -6,5 +6,13 @@
     "chest_key" : {
         "name": "Chest Key",
         "description": "this key opens a chest"
+    },
+    "test_item" : {
+        "name": "Test Item",
+        "description": "this item is for test purposes do not consume with out contacting your doctor"
+    },
+    "secret_item" : {
+        "name": "Secret Test Item",
+        "description": "this item is a secret please don't tell anyone"
     }
 }
